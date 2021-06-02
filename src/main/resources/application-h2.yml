@@ -1,0 +1,39 @@
+spring:
+  datasource:
+#    data: classpath:sql/import.sql
+    hikari:
+      platform: h2
+      url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      type: com.zaxxer.hikari.HikariDataSource
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:~/testdb;DB_CLOSE_ON_EXIT=TRUE;DB_CLOSE_DELAY=-1 # pick
+      pool-name: TEST-SPRING-BOOT-JPA
+      username: testuser
+      password: testuser
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+
+logging:
+  level:
+    root: INFO
+    #    io.lettuce.core: INFO
+#    org.apache.catalina: TRACE
+    #    org.apache.catalina: INFO
+    #    org.apache.coyote: INFO
+    #    org.apache.tomcat: INFO
+#    org.springframework: DEBUG
+#    org.springframework.web: TRACE
+#    org.springframework.cache: INFO
+#    org.springframework.data: INFO

@@ -1,0 +1,47 @@
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+    accesslog:
+      #      directory: /log/..
+      enabled: true
+      pattern: "%t %{X-B3-TraceId}i [%r] [%U] [%s] [%b] [%a] [%T] [%{User-Agent}i] [%{Referer}i]"
+      prefix: access
+      rotate: true
+      suffix: .log
+      rename-on-rotate: true
+    connection-timeout: 3s
+    threads:
+      max: 100
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+  #  profiles:
+  #    active: local
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mvc:
+    dispatch-options-request: true
+    dispatch-trace-request: true
+    throw-exception-if-no-handler-found: true
+  jackson:
+    locale: ko_KR
+    time-zone: Asia/Seoul
+
+logging:
+  level:
+    root: INFO
+    io.lettuce.core: INFO
+    org.apache.catalina: INFO
+    org.apache.coyote: INFO
+    org.apache.tomcat: INFO
+    org.springframework: INFO
+    org.springframework.cache: INFO
+    org.springframework.data: INFO
