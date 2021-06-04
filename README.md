@@ -99,7 +99,7 @@ GET - http://localhost:8080/v1/payments?id=oqeCpwiB5jcSNphm457M
 
 
 ##  테이블 설계
-- 카드사 통신이 DB에 저장하는 것으로 간소화하여 아래오 같이 작업했습니다.
+- 카드사 통신이 DB에 저장하는 것으로 간소화하여 아래와 같이 작업했습니다.
 1. 카드사 통신 내용 저장테이블(CARD_COMPANY)
 2. 카드사 통신 후 승인내용 저장테이블(PAYMENT_APPROVAL)
 3. 카드사 통신 후 취소내용 저장테이블(PAYMENT_CANCEL)
