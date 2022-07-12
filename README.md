@@ -12,13 +12,16 @@
 
 ## Build & Run
 ```
- ./gradlew wrapper --gradle-version={version}
- ./gradlew -v
- ./gradlew clean build -xtest
- ./gradlew clean bootRun --args='--spring.profiles.active=h2'
+mkdir ../logs/app/
+ 
+./gradlew wrapper --gradle-version={version}
+./gradlew -v
+./gradlew clean build -xtest
+./gradlew clean bootRun --args='--spring.profiles.active=h2'
 ```
 ## H2DB 접속
 - http://localhost:8080/h2-console/login.do
+- jdbc:h2:~/testdb
 - testuser / testuser
 
 ## Swagger 접속

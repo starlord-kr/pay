@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="APP_LOG_PATH" value="/Users/slowstarter/log/app"/>
-    <property name="APP_NAME" value="insurance-api"/>
+    <property name="APP_LOG_PATH" value="../logs/app"/>
+    <property name="APP_NAME" value="pay-api"/>
 
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
